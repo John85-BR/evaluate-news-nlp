@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Evaluate news</title>  
+    </head>
+    <body>
+        <header>
+            <div class="">
+                <h1>Evaluate a news article with Natural Language Processing</h1>
+            </div>
+        </header>
+        <main>
+            <section>
+                <form class="" onsubmit="return handleSubmit(event)">                   
+                    <p>CHOICE BEETWEEN</p>                   
+                    <textarea id="text" type="textarea" value="" name="input" rows="5" cols="33" placeholder="Text"></textarea>
+                    <p>OR</p>
+                    <input id="url" type="text" name="input" value="" placeholder="Url">
+                    <p>AND</p>
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+                <div class="loader"></div> 
+            </section>
+
+          
+            <section id = "results-details">                              
+                <strong>Form Results:</strong>               
+                <div id="results-text-complete"></div>
+                <div id="results"></div>
+                <div id="details"></div>           
+            </section>
+        </main>
+        <footer>
+            <p>Copyright</p>      
+        </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>      
+    </body>
+</html>
